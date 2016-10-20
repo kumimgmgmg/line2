@@ -1,0 +1,50 @@
+@media screen and (min-width:1140px){
+    .br-sp { display:none; }
+input, select, textarea {
+font-size: 100%;
+}
+
+body {
+background-color: #ffffff;
+color: #a9a9a9;
+width:700px;
+margin-right: auto;
+margin-left: auto;
+
+margin-top: 40px;
+}
+
+.icon {
+height: 33px;
+}
+
+.m1 {
+background-color: #e9e9e9;
+line-height: 20px;
+}
+
+#suggest {
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCFF;
+    font-size: 90%;
+    width: 200px;
+}
+#suggest div {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#suggest div.select{ /* キー上下で選択した場合のスタイル */
+    color: #FFFFFF;
+    background-color: #3366FF;
+}
+#suggest div.over{ /* マウスオーバ時のスタイル */
+    background-color: #99CCFF;
+}
+
+
+
+
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>交通費節約</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="/static/xxx.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="/static/smart.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/suggesting.js"></script>
+<style>#submit{font-size:300px;} body{text-align:center;}</style>
+<style>
+        .ui-helper-hidden-accessible{display:none!important;} /*入力候補JS余計なやつ消しておく*/
+    ul{background-color:white !important; max-width:300px; 	overflow: auto !important; max-height:200px; }
+    li{list-style-type: none; text-align:left;}
+    #btn {
+    text-decoration: none;
+    text-align: center;
+    font-size: 200%;
+    line-height:9.5px;
+    display: block;
+    color:#5f7396;
+    width: 30px;
+	height: 19px;
+	background: #EEE;
+	border: 1px solid #DDD;
+	border-radius: 35px;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+	padding: 21px 10px 10px;
+    margin: 10px auto;
+}
+</style>
+</head>
+<body>
+<h1><font face="HGS創英角ｺﾞｼｯｸ" color="#5f7396">交通費節約</font> <img src="/static/train.png" height="33px" class="mobileHidden"></h1>
+	<br>
+	<hr color="#5d5d5d" width="">
+<div id="kekka">
+{% for i in comlist %}
+    {{ i }}
+{% endfor %}
+</div>
+<div class="m1" id="nyuryoku">
+    <p>定期ルートを入力してください<br>(※もし経由駅があれば必ず入力してください。)<br>(※直通の経由駅も必ず入力してください。)</p>
+    <form id="form" method="POST" action="./result">
+        <font color="5f7396">出発駅  </font>
+        <input class="aocomp" type="text" name="commutein" placeholder="出発駅" required><br>
+        <font color="5f7396">経由駅1 </font>
+        <input class="aocomp" type="text" name="commutemid1" placeholder="経由駅1(あれば)"><br>
+        <div id="add"></div>
+        <font color="5f7396">到着駅  </font>
+        <input class="aocomp" type="text" name="commuteout" placeholder="到着駅" required>
+        <a id="btn" href="#">+</a>
+    <p>実際に通るルートを入力してください</p>
+        <font color="5f7396">出発駅  </font>
+        <input class="aocomp" type="text" name="actualin" placeholder="出発駅"><br>
+        <font color="5f7396">目的駅  </font>
+        <input class="aocomp" type="text" name="actualout" placeholder="目的駅"><br>
+        <div Align="right"><input type="submit" value="　検索　"></div>
+    </form>
+</div>
+</body>
+</html>
